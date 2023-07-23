@@ -17,13 +17,16 @@ final class PersistenceManager {
     var mainContext: NSManagedObjectContext { persistentContainer.viewContext }
 
     // MARK: Private
-    private let persistentContainer: NSPersistentContainer
+    private let persistentContainer: NSPersistentCloudKitContainer
 
     // MARK: Lifecycle
     private init(storeType: StoreType = .persisted) {
-        persistentContainer = NSPersistentCloudKitContainer(name: "GymTrackr")
         if storeType == .inMemory {
+            persistentContainer = NSPersistentCloudKitContainer(name: "GymTrackr", managedObjectModel: .sharedModel)
             persistentContainer.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+            persistentContainer.persistentStoreDescriptions.first!.cloudKitContainerOptions = nil
+        } else {
+            persistentContainer = NSPersistentCloudKitContainer(name: "GymTrackr", managedObjectModel: .sharedModel)
         }
         persistentContainer.loadPersistentStores(completionHandler: { _, error in
             if let error {
@@ -70,4 +73,14 @@ extension PersistenceManager {
         case inMemory
         case persisted
     }
+}
+
+// MARK: - NSManagedObjectModel
+private extension NSManagedObjectModel {
+
+    static let sharedModel: NSManagedObjectModel = {
+        let url = Bundle(for: PersistenceManager.self).url(forResource: "GymTrackr", withExtension: "momd")!
+        let managedObjectModel = NSManagedObjectModel(contentsOf: url)!
+        return managedObjectModel
+    }()
 }
