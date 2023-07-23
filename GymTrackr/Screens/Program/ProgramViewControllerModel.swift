@@ -6,6 +6,7 @@
 //
 
 import Combine
+import CoreData
 import Foundation
 
 // MARK: - ProgramViewControllerModel
@@ -22,13 +23,13 @@ final class ProgramViewControllerModel {
     private var cancellables: Set<AnyCancellable> = Set()
     private var coordinator: Coordinator
     private var persistenceManager: PersistenceManager
-    private var programsProvider: ProgramProvider
+    private var programProvider: ProgramProvider
 
     // MARK: Lifecycle
-    init(coordinator: Coordinator, persistenceManager: PersistenceManager) {
+    init(coordinator: Coordinator, persistenceManager: PersistenceManager, programProvider: ProgramProvider) {
         self.coordinator = coordinator
         self.persistenceManager = persistenceManager
-        programsProvider = ProgramProvider(persistenceManager: persistenceManager)
+        self.programProvider = programProvider
         customViewModel = ProgramCustomViewModel(program: nil)
         loadBindings()
     }
@@ -38,9 +39,9 @@ final class ProgramViewControllerModel {
 private extension ProgramViewControllerModel {
 
     func loadBindings() {
-        programsProvider.contentDidChangePublisher
-            .map { updatedProgram in
-                ProgramCustomViewModel(program: updatedProgram.first)
+        programProvider.contentDidChangePublisher
+            .map { updatedPrograms in
+                ProgramCustomViewModel(program: updatedPrograms.first)
             }
             .sink { [weak self] updatedCustomViewModel in
                 guard let self else { return }
@@ -56,7 +57,7 @@ extension ProgramViewControllerModel {
     func viewDidLoad() {
         taskState = .loading
         do {
-            try programsProvider.fetch()
+            try programProvider.fetch()
             taskState = .success
         } catch {
             taskState = .failure(error: error)

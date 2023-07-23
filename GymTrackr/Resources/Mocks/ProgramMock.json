@@ -1,0 +1,55 @@
+{
+  "name": "4-Day Program",
+  "creationDate": 711666754.62756097,
+  "updateDate": 711666758.62756097,
+  "workouts": [
+    {
+      "name": "Day 1 - Chest & Abs",
+      "order": 1,
+      "exercises": [
+        { "name": "Bench Press", "order": 1, "setCount": 4 },
+        { "name": "Incline Dumbbell Press", "order": 2, "setCount": 4 },
+        { "name": "Cable Crossover", "order": 3, "setCount": 4 },
+        { "name": "Dumbbell Pullovers", "order": 4, "setCount": 4 },
+        { "name": "Hanging Leg Raises", "order": 5, "setCount": 4 },
+        { "name": "Plank", "order": 6, "setCount": 3 }
+      ]
+    },
+    {
+      "name": "Day 2 - Legs & Triceps",
+      "order": 2,
+      "exercises": [
+        { "name": "Squats", "order": 1, "setCount": 4 },
+        { "name": "Lunges", "order": 2, "setCount": 4 },
+        { "name": "Leg Press", "order": 3, "setCount": 4 },
+        { "name": "Calf Raises", "order": 4, "setCount": 4 },
+        { "name": "Skull Crushers", "order": 5, "setCount": 4 },
+        { "name": "Tricep Dips", "order": 6, "setCount": 4 }
+      ]
+    },
+    {
+      "name": "Day 3 - Back & Biceps",
+      "order": 3,
+      "exercises": [
+        { "name": "Deadlift", "order": 1, "setCount": 4 },
+        { "name": "Bent Over Row", "order": 2, "setCount": 4 },
+        { "name": "Lat Pulldown", "order": 3, "setCount": 4 },
+        { "name": "Seated Cable Row", "order": 4, "setCount": 4 },
+        { "name": "Barbell Curls", "order": 5, "setCount": 4 },
+        { "name": "Hammer Curls", "order": 6, "setCount": 3 }
+      ]
+    },
+    {
+      "name": "Day 4 - Shoulders & Abs",
+      "order": 4,
+      "exercises": [
+        { "name": "Military Press", "order": 1, "setCount": 4 },
+        { "name": "Lateral Raises", "order": 2, "setCount": 4 },
+        { "name": "Rear Delt Flyes", "order": 3, "setCount": 4 },
+        { "name": "Upright Rows", "order": 4, "setCount": 4 },
+        { "name": "Reverse Crunches", "order": 5, "setCount": 4 },
+        { "name": "Russian Twists", "order": 6, "setCount": 3 }
+      ]
+    }
+  ]
+}

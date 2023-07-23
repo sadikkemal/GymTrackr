@@ -22,7 +22,11 @@ extension ProgramCoordinator {
 
     func prepareScreen() -> ViewController {
         let persistenceManager = PersistenceManager.shared
-        let viewModel = ViewController.ViewModel(coordinator: self, persistenceManager: persistenceManager)
+        let programProvider = ProgramProvider(persistenceManager: persistenceManager)
+        let viewModel = ViewController.ViewModel(
+            coordinator: self,
+            persistenceManager: persistenceManager,
+            programProvider: programProvider)
         let viewController = ViewController(viewModel: viewModel)
         self.viewController = viewController
         return viewController

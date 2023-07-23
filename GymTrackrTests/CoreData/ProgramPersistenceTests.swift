@@ -12,8 +12,10 @@ import XCTest
 // MARK: - ProgramPersistenceTests
 final class ProgramPersistenceTests: XCTestCase {
 
-    var persistenceManager: PersistenceManager!
+    // MARK: Private
+    private var persistenceManager: PersistenceManager!
 
+    // MARK: Lifecycle
     override func setUpWithError() throws {
         try super.setUpWithError()
         persistenceManager = .newInMemory
@@ -23,6 +25,10 @@ final class ProgramPersistenceTests: XCTestCase {
         persistenceManager = nil
         try super.tearDownWithError()
     }
+}
+
+// MARK: - Tests
+extension ProgramPersistenceTests {
 
     func testSaveProgram() async throws {
         let programDraft = Self.generateProgramDraft()
