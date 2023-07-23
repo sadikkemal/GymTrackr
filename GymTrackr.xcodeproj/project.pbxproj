@@ -50,6 +50,7 @@
 		E7D652942A40989500FDB840 /* GymTrackrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D652932A40989500FDB840 /* GymTrackrUITests.swift */; };
 		E7D652962A40989500FDB840 /* GymTrackrUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D652952A40989500FDB840 /* GymTrackrUITestsLaunchTests.swift */; };
 		E7D652A32A4098BB00FDB840 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D652A22A4098BB00FDB840 /* PersistenceManager.swift */; };
+		E7F5C38E2A6A9CFA00C8905C /* PersistentDataImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F5C38D2A6A9CFA00C8905C /* PersistentDataImporter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		E7D652932A40989500FDB840 /* GymTrackrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymTrackrUITests.swift; sourceTree = "<group>"; };
 		E7D652952A40989500FDB840 /* GymTrackrUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymTrackrUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E7D652A22A4098BB00FDB840 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		E7F5C38D2A6A9CFA00C8905C /* PersistentDataImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentDataImporter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +330,7 @@
 				E7D652782A40989400FDB840 /* GymTrackr.xcdatamodeld */,
 				E7D652A22A4098BB00FDB840 /* PersistenceManager.swift */,
 				E700EA902A4F610300AE1F5B /* PersistenceManager+Program.swift */,
+				E7F5C38C2A6A9CE000C8905C /* PersistentDataImporter */,
 				E7C5C9D22A5609AB00CBA01E /* Models */,
 			);
 			path = CoreData;
@@ -341,6 +344,14 @@
 				E7D652802A40989500FDB840 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E7F5C38C2A6A9CE000C8905C /* PersistentDataImporter */ = {
+			isa = PBXGroup;
+			children = (
+				E7F5C38D2A6A9CFA00C8905C /* PersistentDataImporter.swift */,
+			);
+			path = PersistentDataImporter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -507,6 +518,7 @@
 				E76972C62A5EBA4F0026200D /* UserDefaultsManager.swift in Sources */,
 				E7C5C9D02A5607D400CBA01E /* Workout.swift in Sources */,
 				E769729C2A5DCF640026200D /* ProgramViewController.swift in Sources */,
+				E7F5C38E2A6A9CFA00C8905C /* PersistentDataImporter.swift in Sources */,
 				E73C2D112A54407A00DE2357 /* UIResponder+Additions.swift in Sources */,
 				E700EA962A4F632700AE1F5B /* NewProgramViewControllerModel.swift in Sources */,
 				E76972BE2A5DE57A0026200D /* NewWorkoutViewController.swift in Sources */,
